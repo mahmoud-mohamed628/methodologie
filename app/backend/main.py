@@ -1,13 +1,22 @@
+import os
+from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 from backend.schemas import PredictionResponse
 from backend.predictor import predictor
 
+BASE_DIR = Path(__file__).resolve().parents[1]
+FRONTEND_DIR = BASE_DIR / "frontend"
+
 app = FastAPI()
 
-# Mount frontend
-app.mount("/frontend", StaticFiles(directory="/app/frontend"), name="frontend")
+# Mount frontend and serve index.html at /frontend
+app.mount(
+    "/frontend",
+    StaticFiles(directory=str(FRONTEND_DIR), html=True),
+    name="frontend",
+)
 
 
 @app.get("/")

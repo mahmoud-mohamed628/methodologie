@@ -1,10 +1,13 @@
 import joblib
 import json
 import numpy as np
+from pathlib import Path
 
-MODEL_PATH = "/app/model/model.pkl"
-SCALER_PATH = "/app/model/scaler.pkl"
-GENES_PATH = "/app/model/selected_genes.json"
+BASE_DIR = Path(__file__).resolve().parents[2]
+MODEL_DIR = BASE_DIR / "model"
+MODEL_PATH = MODEL_DIR / "model.pkl"
+SCALER_PATH = MODEL_DIR / "scaler.pkl"
+GENES_PATH = MODEL_DIR / "selected_genes.json"
 
 
 class Predictor:
