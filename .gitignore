@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+
+# Virtual environments
+env/
+venv/
+.venv/
+pip-wheel-metadata/
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# IDE / OS files
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment variables
+.env
+.env.*
+
+# Data and model artifacts
+training/data/
+model/

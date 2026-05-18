@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prédiction Cancer du Côlon</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧬 Prédiction Cancer du Côlon</h1>
+        <p class="subtitle">Entrez les valeurs d'expression des gènes sélectionnés</p>
+        <div id="inputs-container" class="form-grid">Chargement des gènes...</div>
+        <button id="predict-btn" onclick="makePrediction()">🔍 Prédire</button>
+        <div id="result" class="result-box hidden"></div>
+    </div>
+    <script src="/frontend/script.js"></script>
+</body>
+</html>

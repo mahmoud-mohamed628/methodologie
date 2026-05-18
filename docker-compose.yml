@@ -1,0 +1,17 @@
+services:
+  training:
+    build:
+      context: ./training
+    volumes:
+      - ./model:/app/model
+      - ./training/data:/app/data
+
+  app:
+    build:
+      context: ./app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./model:/app/model
+    depends_on:
+      - training
